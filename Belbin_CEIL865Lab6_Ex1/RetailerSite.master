@@ -1,0 +1,56 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="RetailerSite.master.cs" Inherits="RetailerSite" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Belbin Department Store</title>
+    <asp:ContentPlaceHolder ID="Stylesheet" runat="server">
+        <link rel="stylesheet" href="StyleSheet.css" type="text/css"></asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            height: 500px;
+            width: 1752px;
+        }
+        .auto-style2 {
+            height: 500px;
+            width: 204px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <table style="font-family: Arial">
+            <tr>
+                <td colspan="2" style="height: 80px; text-align: center">
+                    <h1 class="webName">Belbin Department Store</h1>
+                    <asp:Menu CssClass="TopNav" ForeColor="Black" ID="Menu1" runat="server" 
+                        Orientation="Horizontal" DataSourceID="SiteMapDataSource1">
+                        <StaticMenuStyle CssClass="TopNav" />
+                        <StaticHoverStyle Font-Bold="true"/>
+                        <DynamicMenuItemStyle CssClass="TopNav" />
+                    </asp:Menu>
+                    <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+                    <asp:SiteMapPath ID="SiteMapPath1" runat="server" PathDirection="CurrentToRoot" PathSeparator="|" OnItemCreated="SiteMapPath1_ItemCreated"></asp:SiteMapPath>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: darkcyan" class="auto-style2">
+                    <asp:Menu ID="Menu2" runat="server" DataSourceID="SiteMapDataSource2">
+                        <StaticHoverStyle Font-Bold="true"/>
+                    </asp:Menu>
+                    <asp:SiteMapDataSource ID="SiteMapDataSource2" runat="server" ShowStartingNode="False" />
+                </td>
+                <td id="Main" class="auto-style1">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: right">
+                    <b>belbindepartmentstore@copyright2019</b>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
